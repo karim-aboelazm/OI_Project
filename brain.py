@@ -15,8 +15,8 @@ class NeuralNetwork(nn.Module):
     
     def forward(self,x):
         out = self.layerOne(x)
-        out.relu(out)
+        out = self.relu(out)
         out = self.layerTwo(out)
-        out.relu(out)
+        out = self.relu(out)
         out = self.layerThree(out)
         return out

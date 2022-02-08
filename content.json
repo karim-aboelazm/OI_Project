@@ -1,0 +1,26 @@
+{
+    "content":
+    [
+        {
+            "tag" : "greetings",
+            "patterns" : ["hello", "welcome", "hi","hay","wake up","Python","What's up"],
+            "responses" : ["hello sir" , "how are you sir", "Always For You Sir", "Hello","Here's Your Assistant"]
+        },
+        {
+            "tag" : "bye",
+            "patterns" : ["bye", "goodbye", "see you later","sleep", "exit"],
+            "responses" : ["Bye" , "I am Going", "Bye Sir","Goodbye", "It will be nice to meet you again"]
+        },
+        {
+            "tag" : "health",
+            "patterns" : ["how are you", "how do you do", "are you fine ?","are you good"],
+            "responses" : ["fine." , "perfect", "cool","Are you Fine ? I'm Fine","I am Ok ,What abou you ? "]
+        },
+        {
+            "tag" : "identity",
+            "patterns" : ["your name", "what is your name", "who are you","whar are you","Are you Assistant"],
+            "responses" : ["Python Assistant" , "I am Python Assistant created by Us ","My Name is Python Assistant","yes , I am Python Assistant"]
+        }
+    ]
+}
+
