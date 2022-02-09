@@ -18,5 +18,3 @@ def voiceOutput(txt):
     engine.runAndWait() # for waiting
 
     print('   ') # New Line 
-
-voiceOutput('Welcome To Our Voice Assistant System In Machine Learning and Deep Learning. ') 

@@ -20,6 +20,32 @@
             "tag" : "identity",
             "patterns" : ["your name", "what is your name", "who are you","whar are you","Are you Assistant"],
             "responses" : ["Python Assistant" , "I am Python Assistant created by Us ","My Name is Python Assistant","yes , I am Python Assistant"]
+        },
+        {
+            "tag" : "time",
+            "patterns" : ["what time is now ?", "what is the time ?", "tell me time","time"],
+            "responses" : ["The time is "]
+
+        },
+        {
+            "tag" : "date",
+            "patterns" : ["what date is ?", "what is the date ?", "tell me date","date"],
+            "responses" : ["The date is "]
+        },
+        {
+            "tag" : "day",
+            "patterns" : ["what day is ?", "what is the day ?", "tell me day","day","today is"],
+            "responses" : ["The day is "]
+        },
+        {
+            "tag" : "wikipedia",
+            "patterns" : ["who is  ?", "about", "what is ","wikipedia","which is","What do you know about ?"],
+            "responses" : ["wikipedia"]
+        },
+        {
+            "tag" : "google",
+            "patterns" : ["google search", "search for", "search about","google","which is"],
+            "responses" : ["google"]
         }
     ]
 }

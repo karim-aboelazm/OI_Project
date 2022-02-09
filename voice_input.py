@@ -26,5 +26,3 @@ def voiceInput():
     query = str(query)
 
     return query.lower()
-
-voiceInput()
