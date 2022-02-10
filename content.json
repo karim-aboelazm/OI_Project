@@ -46,6 +46,56 @@
             "tag" : "google",
             "patterns" : ["google search", "search for", "search about","google","which is"],
             "responses" : ["google"]
+        },
+        {
+            "tag" : "YouTube",
+            "patterns" : ["YouTube search", "in YouTube", "YouTube"],
+            "responses" : ["YouTube"]
+        },
+        {
+            "tag" : "website",
+            "patterns" : ["open", "website","site"],
+            "responses" : ["website"]
+        },
+        {
+            "tag" : "playvideo",
+            "patterns" : ["play", "music","youtube music","youtube video","start video"],
+            "responses" : ["playvideo"]
+        },
+        {
+            "tag" : "weather",
+            "patterns" : ["weather in","what is weather in","weather for","tell me the weather for","what is the weather for"],
+            "responses" : ["weather"]
+        },
+        {
+            "tag" : "temperature",
+            "patterns" : ["temperature","what is the temperature","temperature in","temperature for"],
+            "responses" : ["temperature"]
+        },
+        {
+            "tag" : "calculate",
+            "patterns" : ["calculate","plus","multiply","div on","power","minus","divide","in","into","+","-","/","x"],
+            "responses" : ["calculate"]
+        },
+        {
+            "tag" : "whatsapp message",
+            "patterns" : ["send message to","send","whatsapp message","make a message","message to","message for"],
+            "responses" : ["whatsapp message"]
+        },
+        {
+            "tag" : "whatsapp call",
+            "patterns" : ["make a call","call","whatsapp call"],
+            "responses" : ["whatsapp call"]
+        },
+        {
+            "tag" : "whatsapp video",
+            "patterns" : ["make a video","video","whatsapp video","video call"],
+            "responses" : ["whatsapp video"]
+        },
+        {
+            "tag" : "whatsapp chat",
+            "patterns" : ["open chat","chating with","whatsapp chat","chat with","chat to","to chat with","show chat"],
+            "responses" : ["whatsapp chat"]
         }
     ]
 }

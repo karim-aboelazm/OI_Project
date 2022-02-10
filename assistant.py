@@ -15,41 +15,29 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 with open('content.json','r') as jd:
     contents = json.load(jd)
 
-# -------------------------------------------------------------------
-
 FILE = 'TrainingData.pth'
 data = torch.load(FILE)
-
-# -------------------------------------------------------------------
-
 model_state = data['model_state']
 input_size = data['input_size']
 hidden_size = data['hidden_size']
 output_size = data['output_size']
 all_words = data['all_words']
 tags = data['tags']
-
-# ---------------------------------------------------------------
 model = NeuralNetwork(input_size,hidden_size,output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-# ---------------------------------------------------------------
 def assistant():
     stm = voiceInput()
     result = str(stm)
-    if stm=="exit" or stm == None:
+    if stm == "exit" or stm == None:
         voiceOutput('Goodbye Sir')
         exit()
-    
     stm = tokenize(stm)
     w = bag_of_words(stm,all_words)  
     w = w.reshape(1,w.shape[0])   
     w = torch.from_numpy(w).to(device)
     output = model(w)
-
-# ---------------------------------------------------------------
- 
     _ , predicted = torch.max(output,dim=1) 
     item = predicted.item()
     tag = tags[item]
@@ -71,9 +59,43 @@ def assistant():
                 elif "google" in reply:
                     voiceOutput('Searching Sir...')
                     get_input_error(reply,result)
+                elif "YouTube" in reply:
+                    voiceOutput('opening Sir...')
+                    get_input_error(reply,result)
+                elif "website" in reply:
+                    voiceOutput('opening Sir...')
+                    get_input_error(reply,result)
+                elif "playvideo" in reply:
+                    voiceOutput('playing Sir...')
+                    get_input_error(reply,result)
+                elif "weather" in reply:
+                    voiceOutput('Forcasting Sir...')
+                    get_input_error(reply,result)
+                elif "temperature" in reply:
+                    voiceOutput('Ok Sir...')
+                    get_input_error(reply,result)
+                elif "calculate" in reply:
+                    voiceOutput('Calculating Sir...')
+                    get_input_error(reply,result)
+
+                elif "whatsapp message" in reply:
+                    voiceOutput('Ok Sir...')
+                    get_input_error(reply,result)
+
+                elif "whatsapp call" in reply:
+                    voiceOutput('Ok Sir...')
+                    get_input_error(reply,result)
+
+                elif "whatsapp video" in reply:
+                    voiceOutput('Ok Sir...')
+                    get_input_error(reply,result)
+
+                elif "whatsapp chat" in reply:
+                    voiceOutput('Ok Sir...')
+                    get_input_error(reply,result)
                 else:    
                     voiceOutput(reply)
 
-# ---------------------------------------------------------------
 while True:
     assistant()
+    time.sleep(1)

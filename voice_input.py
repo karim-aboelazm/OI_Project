@@ -22,7 +22,7 @@ def voiceInput():
         
         print(f'You said : {query}') # print with it listen
     except:
-        pass
+       return   # None
     query = str(query)
 
     return query.lower()
