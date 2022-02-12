@@ -38,7 +38,7 @@ for (pattern_word,tag) in xy:
 x_train = np.array(x_train)
 y_train = np.array(y_train)
 # -----------------------------------------
-num_epoches = 2000
+num_epoches = 1000
 batch_size = 8
 learning_rate = 0.001
 input_size = len(x_train[0])

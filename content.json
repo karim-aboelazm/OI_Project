@@ -96,6 +96,76 @@
             "tag" : "whatsapp chat",
             "patterns" : ["open chat","chating with","whatsapp chat","chat with","chat to","to chat with","show chat"],
             "responses" : ["whatsapp chat"]
+        },
+        {
+            "tag" : "open word",
+            "patterns" : ["word","Microsoft Word","word file","open word"],
+            "responses" : ["open word"]
+        },
+        {
+            "tag" : "open access",
+            "patterns" : ["access","Microsoft access","access file","open access"],
+            "responses" : ["open access"]
+        },
+        {
+            "tag" : "open powerpoint",
+            "patterns" : ["PowerPoint","Microsoft PowerPoint","PowerPoint file","presentation","ppt file","open access","ppt"],
+            "responses" : ["open powerpoint"]
+        },
+        {
+            "tag" : "open excel",
+            "patterns" : ["excel","Microsoft excel","excel file","excel sheet","open excel"],
+            "responses" : ["open excel"]
+        },
+        {
+            "tag" : "open chrome",
+            "patterns" : ["chrome","google chrome","chrome page","open chrome"],
+            "responses" : ["open chrome"]
+        },
+        {
+            "tag" : "open cmd",
+            "patterns" : ["cmd","command screen","command line","command prompt","black screen", "Dos Screen", "Dos"],
+            "responses" : ["open cmd"]
+        },
+        {
+            "tag" : "open vscode",
+            "patterns" : ["vs","vs code","vscode","code","script file", "my code"],
+            "responses" : ["open vscode"]
+        },
+        {
+            "tag" : "open zoom",
+            "patterns" : ["zoom","zoom meeting","meeting","open zoom"],
+            "responses" : ["open zoom"]
+        },
+        {
+            "tag" : "open notepad",
+            "patterns" : ["notepad","open notepad"],
+            "responses" : ["open notepad"]
+        },
+        {
+            "tag" : "internet speed",
+            "patterns" : ["The speed of the Internet","Internet speed"],
+            "responses" : ["internet speed"]
+        },
+        {
+            "tag" : "how to",
+            "patterns" : ["How can I","how can I do", "how to"],  
+            "responses" : ["how to"]
+        },
+        {
+            "tag" : "remember that",
+            "patterns" : ["Can You remember that","remember that","remind me that", "remember"],  
+            "responses" : ["remember that"]
+        },
+        {
+            "tag" : "what do you remember",
+            "patterns" : ["what do you remember","Do You remember that", "Do you still remember","Do you still remind that"],  
+            "responses" : ["what do you remember"]
+        },
+        {
+            "tag" : "break",
+            "patterns" : ["sleep","Take a break", "break","you need a break Omar"],   
+            "responses" : ["break"]
         }
     ]
 }

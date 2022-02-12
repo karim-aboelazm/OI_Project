@@ -53,6 +53,30 @@ def assistant():
                     get_error(reply)
                 elif 'day' in reply:
                     get_error(reply)
+                elif "break" in reply:
+                    get_error(reply)
+                elif 'open word' in reply:
+                    get_error(reply)
+                elif 'open powerpoint' in reply:
+                    get_error(reply)
+                elif 'open access' in reply:
+                    get_error(reply)
+                elif 'open excel' in reply:
+                    get_error(reply)
+                elif 'open vscode' in reply:
+                    get_error(reply)
+                elif 'open cmd' in reply:
+                    get_error(reply)
+                elif 'open chrome' in reply:
+                    get_error(reply)
+                elif 'open zoom' in reply:
+                    get_error(reply)
+                elif 'open notepad' in reply:
+                    get_error(reply)
+
+                elif 'internet speed' in reply:
+                    get_error(reply)
+                
                 elif "wikipedia" in reply:
                     voiceOutput('Searching Sir...')
                     get_input_error(reply,stm)
@@ -93,6 +117,17 @@ def assistant():
                 elif "whatsapp chat" in reply:
                     voiceOutput('Ok Sir...')
                     get_input_error(reply,result)
+
+                elif 'remember that' in reply:
+                    voiceOutput("Ok Sir..")
+                    get_input_error(reply,result)
+                elif 'what do you remember' in reply:
+                    voiceOutput("Ok Sir..")
+                    get_input_error(reply,result)
+                
+                elif "how to" in reply:
+                    get_input_error(reply,result)
+
                 else:    
                     voiceOutput(reply)
 

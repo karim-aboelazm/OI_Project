@@ -3,7 +3,9 @@ import datetime
 import wikipedia
 import webbrowser
 import pywhatkit
+from pywikihow import search_wikihow
 import requests
+import speedtest
 import wolframalpha
 from pyautogui import click, position
 from keyboard import write , press
@@ -26,6 +28,128 @@ def get_day():
     day = datetime.datetime.now().strftime("%A")
     voiceOutput(f"Today Is : {day}")
 
+def open_word():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('word')
+    time.sleep(3)
+    press('enter')
+
+def close_word():
+    pass
+
+def open_chrome():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('google chrome')
+    time.sleep(3)
+    press('enter')
+
+def close_chrome():
+    pass
+
+def open_excel():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('excel')
+    time.sleep(3)
+    press('enter')
+
+def close_excel():
+    pass
+
+def open_access():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('access')
+    time.sleep(3)
+    press('enter')
+
+def close_access():
+    pass
+
+def open_zoom():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('zoom')
+    time.sleep(3)
+    press('enter')
+
+def close_zoom():
+    pass
+
+def open_vscode():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('vscode')
+    time.sleep(3)
+    press('enter')
+
+def close_vscode():
+    pass
+
+def open_powerpoint():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('powerpoint')
+    time.sleep(3)
+    press('enter')
+
+def close_powerpoint():
+    pass
+
+def open_notepad():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('notepad')
+    time.sleep(3)
+    press('enter')
+
+def close_nodepad():
+    pass
+
+def open_chrome():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('google chrome')
+    time.sleep(3)
+    press('enter')
+
+def close_chrome():
+    pass
+
+def open_downloads():
+    time.sleep(1)
+    startfile('C:\\Users\\Karim Aboelazm\\Downloads')
+
+def close_downloads():
+    pass
+
+def open_cmd():
+    click(x=13, y=754)
+    time.sleep(3)
+    write('cmd')
+    time.sleep(3)
+    press('enter')
+
+def close_cmd():
+    pass
+
+def check_internet_speed():
+    voiceOutput('Checking Sir ...')
+    speed = speedtest.Speedtest()
+    download_speed = speed.download()
+    correct_Dspeed = int(download_speed/800000)
+    upload_speed = speed.upload()
+    correct_Uspeed = int(upload_speed/800000)
+    voiceOutput(f'Download speed is {correct_Dspeed} m/s , upload speed is {correct_Uspeed} m/s')
+
+def break_assistant():   
+    voiceOutput("Ok Sir , You Can Call Me At Anytime ..")
+    voiceOutput("Just Say Wake Up !")
+    exit()  
+
+
 def get_error(query): 
     query = str(query)
     if 'time' in query:
@@ -34,6 +158,29 @@ def get_error(query):
         get_date()
     elif 'day' in query:
         get_day()
+    elif "break" in query:
+        break_assistant()
+    elif "open word" in query:
+        open_word()
+    elif "open powerpoint" in query:
+        open_powerpoint()
+    elif "open vscode" in query:
+        open_vscode()
+    elif "open chrome" in query:
+        open_chrome()
+    elif "open notepad" in query:
+        open_notepad()
+    elif "open access" in query:
+        open_access()
+    elif "open excel" in query:
+        open_excel()
+    elif "open zoom" in query:
+        open_zoom()
+    elif "open cmd" in query:
+        open_cmd()
+    elif "internet speed" in query:
+        check_internet_speed()
+    
 
 # -----------------------------------------------------------------------------
 def wolframalpha_setting(query):
@@ -93,7 +240,6 @@ def whatsapp_chat(name):
     time.sleep(2)
 
 
-
 def get_input_error(tag,query):
 
     if "wikipedia" in tag:
@@ -124,6 +270,18 @@ def get_input_error(tag,query):
         query = query.replace(" ","")
         query = query.replace("play","")
         pywhatkit.playonyt(query)
+
+    elif "remember that" in tag:
+        rmsg = str(query).replace("remember that","")
+        rmsg = rmsg.replace("remind me that","")
+        voiceOutput(f"You Told me to remind you that {rmsg}")
+        remember = open('remind.txt','w')
+        remember.write(rmsg)
+        remember.close()
+
+    elif "what do you remember" in tag:
+        remember_message = open('remind.txt','r')
+        voiceOutput(f"You Told me to remember you that {str(remember_message.read())}")
 
     elif "weather" in tag:
         query = str(query).replace("weather in","")
@@ -195,4 +353,10 @@ def get_input_error(tag,query):
         voiceOutput(f'Ok Sir , Opening whatsapp chat With {query} ..')
         whatsapp_chat(str(query))
 
-    
+    elif "how to" in tag:
+        voiceOutput('Getting Data from The Internet...')
+        max_result = 1
+        how_to = search_wikihow(query, max_result)
+        assert len(how_to) == max_result
+        voiceOutput(how_to[0].summary)
+
